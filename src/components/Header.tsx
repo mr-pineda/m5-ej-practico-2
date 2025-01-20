@@ -7,6 +7,7 @@ const Header = () => {
     { name: SCREENS.HOME, url: "/" },
     { name: SCREENS.ABOUT, url: "/about" },
     { name: SCREENS.CONTACT, url: "/contact" },
+    { name: SCREENS.LOGIN, url: "/login" },
   ];
 
   return (
