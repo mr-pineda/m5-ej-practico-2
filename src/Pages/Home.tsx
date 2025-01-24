@@ -1,6 +1,6 @@
 import { useEffect, useState, createContext } from "react";
 import SortedServiceList from "../components/SortedServiceList";
-import { obtenerdoctorInfo } from "../scripts/api";
+import { getDoctorData } from "../utils/api";
 
 export const generalServices = createContext([
   "Medicina General",
@@ -17,7 +17,7 @@ const Home = () => {
   useEffect(() => {
     // Simular carga inicial de datos
     const fetchData = async () => {
-      const doctors = await obtenerdoctorInfo();
+      const doctors = await getDoctorData();
       setData(doctors.flatMap((doctor) => doctor.services));
     };
     fetchData();

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { obtenerdoctorInfo } from "../scripts/api";
+import { getDoctorData } from "../utils/api";
 import AppointmentForm from "../components/AppointmentForm";
 import { doctor } from "../types/data";
 
@@ -33,7 +33,7 @@ const Contact = () => {
 
   useEffect(() => {
     const fetchDoctorsData = async () => {
-      const data = await obtenerdoctorInfo(); //Llama a la función de la API simulada
+      const data = await getDoctorData(); //Llama a la función de la API simulada
       setDoctorsData(data); //Actualiza el estado con los datos obtenidos
     };
 

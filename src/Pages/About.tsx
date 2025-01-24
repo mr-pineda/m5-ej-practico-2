@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import DoctorCard from "../components/DoctorCard";
 import { doctor } from "../types/data";
-import { obtenerdoctorInfo } from "../scripts/api";
+import { getDoctorData } from "../utils/api";
 
 const About = () => {
   const [data, setData] = useState<doctor[]>([]);
@@ -10,7 +10,7 @@ const About = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const doctors = await obtenerdoctorInfo();
+      const doctors = await getDoctorData();
       setData(doctors);
     };
     fetchData();
